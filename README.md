@@ -29,6 +29,16 @@ chathistory.go
 var hiddenPrompt = `・・・・・・・・・・` // 適宜作成してください
 ```
 
+static/script.js - generateBotReply
+```js
+async function generateBotReply({myCharName, yourCharName, prompt}) {
+    ...
+    if (chatHistory.length > 20) {            // APIに渡す履歴の数
+        chatHistory = chatHistory.slice(-20); // 長い会話でエラーが出る場合は減らしてください
+    }
+}
+```
+
 ## Usage
 
 ```bash
