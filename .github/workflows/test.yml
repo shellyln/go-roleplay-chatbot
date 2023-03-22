@@ -19,6 +19,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
+    - name: Create dot env file
+    - shell: bash
+      run: |
+        touch .env
+
     - name: Set up Go
       uses: actions/setup-go@v3
       with:
