@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(./images/bg.png);
+    background-size: cover;
+    background-color:rgba(255,255,255,0.4);
+    background-blend-mode:lighten;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    --sb-track-color: #232E33;
+    --sb-thumb-color: #ff7f7f;
+    --sb-size: 10px;
+    scrollbar-color: var(--sb-thumb-color) 
+                     var(--sb-track-color);
+}
+
+::-webkit-scrollbar {
+    width: var(--sb-size) 
+}
+
+::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 10px;
+}
+
+#chat-area {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#controls {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+#message-input {
+    flex-grow: 1;
+    padding: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow-y: auto;
+    height: calc(100vh - 80px);
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.row.right {
+    align-items: flex-end;
+    flex-direction: row-reverse;
+}
+
+.row.left {
+    align-items: flex-end;
+    flex-direction: row;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 10px;
+    background-size: 50px;
+}
+
+.bubble {
+    width: calc(100% - 200px);
+    max-width: 78%;
+    padding: 15px;
+    margin: 10px 0 0 0;
+    border-radius: 15px;
+    position: relative;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+
+.bubble.right {
+    background-color: #ffb1b1;
+    border-color: #ff7f7f;
+    border-width: 1.2px;
+    border-style: solid;
+}
+
+.bubble.left {
+    background-color: #ffeeee;
+    border-color: #ff7f7f;
+    border-width: 1.2px;
+    border-style: solid;
+}
+
+.bubble.right::before {
+    content: "";
+    position: absolute;
+    border-left: 10px solid #ffb1b1;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    right: -9px;
+    bottom: 12px;
+}
+
+.bubble.left::before {
+    content: "";
+    position: absolute;
+    border-right: 10px solid #ffeeee;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    left: -10px;
+    bottom: 12px;
+}
+
+.emoji {
+    font-size: 48pt;
+    font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+.settings {
+    display: flex;
+    justify-content: end; 
+    align-items: center;
+    margin-right: 10px;
+}
+
+.settings label {
+    margin-right: 5px;
+}
+
+.settings select {
+    margin-right: 10px;
+}
+
+.message-area {
+    display: flex;
+    padding: 4px 10px;
+}

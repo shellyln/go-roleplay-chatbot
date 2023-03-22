@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>チャット</title>
+</head>
+<body>
+    <div class="settings">
+        <label>ボットのキャラ:</label>
+        <select id="bot-character">
+            <!-- キャラクターリストをここに追加 -->
+        </select>
+        <label>自分のキャラ:</label>
+        <select id="my-character">
+            <!-- キャラクターリストをここに追加 -->
+        </select>
+    </div>
+    <div class="chat-container">
+        <!-- チャットがここに追加されます -->
+    </div>
+
+    <div class="message-area">
+        <input type="text" id="message" placeholder="メッセージを入力..." style="flex-grow: 2;">
+        <button id="send-button" onclick="sendMessage()">送信</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
