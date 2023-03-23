@@ -64,13 +64,13 @@ docker compose up
 ### Init script for OpenWrt
 
 ```bash
-/etc/init.d/rpchat enable
-/etc/init.d/rpchat start
-/etc/init.d/rpchat stop
-/etc/init.d/rpchat disable
+/etc/init.d/rpchatd enable
+/etc/init.d/rpchatd start
+/etc/init.d/rpchatd stop
+/etc/init.d/rpchatd disable
 ```
 
 ## License
 
-MIT
+MIT  
 Copyright (c) 2023 Shellyl_N and Authors.
