@@ -1,0 +1,20 @@
+[Unit]
+Description=Roleplay chat daemon
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/rpchatd
+ExecReload=/bin/kill -HUP $MAINPID
+ExecStop=/bin/kill -TERM $MAINPID
+KillMode=mixed
+Restart=always
+EnvironmentFile=/etc/default/rpchatd
+User=nobody
+Group=nogroup
+PrivateTmp=true
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multi-user.target

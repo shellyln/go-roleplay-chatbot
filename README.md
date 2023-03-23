@@ -64,10 +64,31 @@ docker compose up
 ### Init script for OpenWrt
 
 ```bash
+cp rpchatd /root/bin/.
+chmod 711 /root/bin/rpchatd
+cp initd/openwrt/etc/init.d/rpchatd /etc/init.d/.
+chmod 755 /etc/init.d/rpchatd
+
 /etc/init.d/rpchatd enable
 /etc/init.d/rpchatd start
 /etc/init.d/rpchatd stop
 /etc/init.d/rpchatd disable
+```
+
+### Init script for Systemd
+
+```bash
+cp rpchatd /usr/local/bin/.
+chmod 711 /usr/local/bin/rpchatd
+cp initd/systemd/etc/default/rpchatd /etc/default/.
+chmod 644 /etc/default/rpchatd
+cp initd/systemd/etc/systemd/system/rpchatd.service /etc/systemd/system/.
+chmod 644 /etc/systemd/system/rpchatd.service
+
+systemctl enable rpchatd
+systemctl start rpchatd
+systemctl stop rpchatd
+systemctl disable rpchatd
 ```
 
 ## License
