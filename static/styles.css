@@ -9,6 +9,8 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    height: 100svh;
+    height: 100dvh;
 
     --sb-track-color: #232E33;
     --sb-thumb-color: #ff7f7f;
@@ -60,6 +62,8 @@ body {
     padding: 10px;
     overflow-y: auto;
     height: calc(100vh - 80px);
+    height: calc(100svh - 80px);
+    height: calc(100dvh - 80px);
 }
 
 .row {
@@ -153,4 +157,49 @@ body {
 .message-area {
     display: flex;
     padding: 4px 10px;
+}
+
+.message-text {
+    flex-grow: 1;
+    background-color: #ffeeee;
+    outline: none !important;
+    border: 1px solid #ffaaaa;
+    font-size: 16pt;
+}
+
+.message-text:focus {
+    outline: none !important;
+    border: 1px solid #ff7f7f;
+    box-shadow: 0 0 2px #ff7f7f;
+}
+
+.message-send {
+    outline: none !important;
+    border: 1px solid #7fbdff;
+    font-size: 16pt;
+    border-radius: 10px;
+    background-color: #ddefff;
+}
+
+.message-send:hover {
+    border: 1px solid #7fbdff;
+    box-shadow: 0 0 2px #7fbdff;
+}
+
+.message-send:active {
+    background-color: #ffaaaa;
+    border: 1px solid #ff7f7f;
+    box-shadow: 0 0 2px #ff7f7f;
+}
+
+@media (max-width: 599px) {
+    .message-text {
+        font-size: 16pt;
+        width: 100px;
+    }
+    
+    .message-send {
+        white-space: nowrap;
+        font-size: 16pt;
+    }
 }

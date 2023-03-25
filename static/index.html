@@ -8,11 +8,11 @@
 </head>
 <body>
     <div class="settings">
-        <label>ボットのキャラ:</label>
+        <label>ボット:</label>
         <select id="bot-character">
             <!-- キャラクターリストをここに追加 -->
         </select>
-        <label>自分のキャラ:</label>
+        <label>自分:</label>
         <select id="my-character">
             <!-- キャラクターリストをここに追加 -->
         </select>
@@ -22,8 +22,8 @@
     </div>
 
     <div class="message-area">
-        <input type="text" id="message" placeholder="メッセージを入力..." style="flex-grow: 2;">
-        <button id="send-button" onclick="sendMessage()">送信</button>
+        <input class="message-text" type="text" id="message" placeholder="メッセージを入力...">
+        <button class="message-send" id="send-button" onclick="sendMessage()">送信</button>
     </div>
 
     <script src="script.js"></script>
