@@ -69,10 +69,11 @@ chmod 711 /root/bin/rpchatd
 cp initd/openwrt/etc/init.d/rpchatd /etc/init.d/.
 chmod 755 /etc/init.d/rpchatd
 
-/etc/init.d/rpchatd enable
-/etc/init.d/rpchatd start
-/etc/init.d/rpchatd stop
-/etc/init.d/rpchatd disable
+service rpchatd enable
+service rpchatd start
+service rpchatd stop
+service rpchatd disable
+service
 ```
 
 ### Init script for Systemd
@@ -89,6 +90,7 @@ systemctl enable rpchatd
 systemctl start rpchatd
 systemctl stop rpchatd
 systemctl disable rpchatd
+systemctl list-units --type=service
 ```
 
 ## License
